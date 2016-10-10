@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.rex.hwong.openeyes.ui.activity.MainActivity">
+
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/menu_group"
+        android:gravity="bottom"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFFFF">
+
+        <RadioButton
+            android:id="@+id/menu_select"
+            style="@style/MenuRadioButton"
+            android:drawableTop="@drawable/ic_tab_strip_feed_selector"
+            android:text="@string/menu_select"/>
+
+        <RadioButton
+            android:id="@+id/menu_find"
+            style="@style/MenuRadioButton"
+            android:drawableTop="@drawable/ic_tab_strip_category_selector"
+            android:text="@string/menu_find"/>
+
+        <RadioButton
+            android:id="@+id/menu_author"
+            style="@style/MenuRadioButton"
+            android:drawableTop="@drawable/ic_tab_strip_pgc_selector"
+            android:text="@string/menu_author"/>
+
+        <RadioButton
+            android:id="@+id/menu_self"
+            style="@style/MenuRadioButton"
+            android:drawableTop="@drawable/ic_tab_strip_profile_selector"
+            android:text="@string/menu_self"/>
+
+    </RadioGroup>
+
+</LinearLayout>
