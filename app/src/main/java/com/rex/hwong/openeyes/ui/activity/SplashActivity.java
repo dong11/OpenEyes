@@ -1,7 +1,6 @@
 package com.rex.hwong.openeyes.ui.activity;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.rex.hwong.openeyes.R;

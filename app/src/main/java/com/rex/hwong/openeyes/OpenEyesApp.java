@@ -1,6 +1,7 @@
 package com.rex.hwong.openeyes;
 
 import android.app.Application;
+import android.content.Context;
 
 /**
  * @author dong {hwongrex@gmail.com}
@@ -9,8 +10,16 @@ import android.app.Application;
  */
 
 public class OpenEyesApp extends Application {
+
+    public static OpenEyesApp openEyesApp = null;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        openEyesApp = this;
+    }
+
+    public static Context getContext(){
+        return openEyesApp;
     }
 }
