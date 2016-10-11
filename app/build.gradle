@@ -6,7 +6,7 @@ android {
     buildToolsVersion "23.0.3"
     defaultConfig {
         applicationId "com.rex.hwong.openeyes"
-        minSdkVersion 9
+        minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -43,4 +43,7 @@ dependencies {
 
     compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.6.2'
     //  dependency ijkplayer end
+
+    //轮播图
+    compile 'com.jude:rollviewpager:1.4.5'
 }

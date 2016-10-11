@@ -2,7 +2,7 @@ package com.rex.hwong.openeyes.ui.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
+import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
@@ -20,7 +20,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends BaseActivity {
     @BindView(R.id.content)
     FrameLayout mContent;
     @BindView(R.id.menu_group)
@@ -33,6 +33,8 @@ public class MainActivity extends FragmentActivity {
     RadioButton mMenuAuthor;
     @BindView(R.id.menu_self)
     RadioButton mMenuSelf;
+    @BindView(R.id.title_bar)
+    View mTitleView;
 
     private ArrayList<Fragment> mFragments;
     private Fragment currentFragment;
@@ -62,18 +64,22 @@ public class MainActivity extends FragmentActivity {
                 int page = 0;
                 switch (checkedId){
                     case R.id.menu_select:
+                        mTitleView.setVisibility(View.GONE);
                         break;
                     case R.id.menu_find:
                         page = 1;
                         titleRes = R.string.menu_find;
+                        mTitleView.setVisibility(View.VISIBLE);
                         break;
                     case R.id.menu_author:
                         page = 2;
                         titleRes = R.string.menu_author;
+                        mTitleView.setVisibility(View.VISIBLE);
                         break;
                     case R.id.menu_self:
                         page = 3;
                         titleRes = R.string.menu_self;
+                        mTitleView.setVisibility(View.VISIBLE);
                         break;
                 }
                 switchFragment(mFragments.get(page), titleRes);

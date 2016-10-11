@@ -4,10 +4,12 @@ import android.util.Log;
 
 import com.rex.hwong.openeyes.api.discovery.DiscoveryRequest;
 import com.rex.hwong.openeyes.bean.discovery.DiscoveryData;
+import com.rex.hwong.openeyes.bean.discovery.DiscoveryItem;
 import com.rex.hwong.openeyes.bean.discovery.DiscoveryResponse;
 import com.rex.hwong.openeyes.presenter.IFindPresenter;
 import com.rex.hwong.openeyes.ui.iView.IFindFragment;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import rx.Observer;
@@ -57,7 +59,18 @@ public class FindPresenterImpl extends BasePresenterImpl implements IFindPresent
 
                     @Override
                     public void onNext(List<DiscoveryData> discoveryDatas) {
-                        mIFindFragment.getDiscoveryInfo(discoveryDatas);
+                        List<DiscoveryItem> contentList = new ArrayList<DiscoveryItem>();
+                        List<DiscoveryItem> bannerList = new ArrayList<DiscoveryItem>();
+                        for(DiscoveryData data : discoveryDatas){
+                            if(data.getData().getItemList() != null){
+                                for(DiscoveryData bannerData : data.getData().getItemList()){
+                                    bannerList.add(bannerData.getData());
+                                }
+                            } else {
+                                contentList.add(data.getData());
+                            }
+                        }
+                        mIFindFragment.getDiscoveryInfo(bannerList, contentList);
                     }
                 });
         addSubscription(subscription);

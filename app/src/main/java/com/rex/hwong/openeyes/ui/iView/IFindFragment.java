@@ -12,5 +12,5 @@ import java.util.List;
  */
 
 public interface IFindFragment {
-    void getDiscoveryInfo(List<DiscoveryData> discoveryDatas);
+    void getDiscoveryInfo(List<DiscoveryItem> bannerDatas,List<DiscoveryItem> contentDatas);
 }

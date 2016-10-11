@@ -8,6 +8,10 @@
     android:orientation="vertical"
     tools:context="com.rex.hwong.openeyes.ui.activity.MainActivity">
 
+    <include
+        android:id="@+id/title_bar"
+        layout="@layout/activity_title"/>
+
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"

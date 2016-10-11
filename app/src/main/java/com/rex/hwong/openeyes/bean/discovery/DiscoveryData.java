@@ -1,5 +1,7 @@
 package com.rex.hwong.openeyes.bean.discovery;
 
+import java.util.List;
+
 /**
  * @author dong {hwongrex@gmail.com}
  * @date 16/10/10

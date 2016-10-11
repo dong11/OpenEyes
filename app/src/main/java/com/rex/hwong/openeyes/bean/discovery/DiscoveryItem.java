@@ -6,6 +6,8 @@ package com.rex.hwong.openeyes.bean.discovery;
  * @time 下午5:55
  */
 
+import java.util.List;
+
 /**
  *  {
  *      dataType: "SquareCard",
@@ -25,11 +27,13 @@ public class DiscoveryItem {
     private String actionUrl;
     private boolean shade;
     private String adTrack;
+    private int count;
+    private List<DiscoveryData> itemList;
 
     public DiscoveryItem() {
     }
 
-    public DiscoveryItem(int id, String title, String dataType, String image, String actionUrl, boolean shade, String adTrack) {
+    public DiscoveryItem(int id, String title, String dataType, String image, String actionUrl, boolean shade, String adTrack, int count, List<DiscoveryData> itemList) {
         this.id = id;
         this.title = title;
         this.dataType = dataType;
@@ -37,6 +41,8 @@ public class DiscoveryItem {
         this.actionUrl = actionUrl;
         this.shade = shade;
         this.adTrack = adTrack;
+        this.count = count;
+        this.itemList = itemList;
     }
 
     public int getId() {
@@ -95,6 +101,22 @@ public class DiscoveryItem {
         this.adTrack = adTrack;
     }
 
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public List<DiscoveryData> getItemList() {
+        return itemList;
+    }
+
+    public void setItemList(List<DiscoveryData> itemList) {
+        this.itemList = itemList;
+    }
+
     @Override
     public String toString() {
         return "DiscoveryItem{" +
@@ -105,6 +127,8 @@ public class DiscoveryItem {
                 ", actionUrl='" + actionUrl + '\'' +
                 ", shade=" + shade +
                 ", adTrack='" + adTrack + '\'' +
+                ", count=" + count +
+                ", itemList=" + itemList +
                 '}';
     }
 }

@@ -6,6 +6,6 @@ package com.rex.hwong.openeyes.presenter;
  * @time 下午5:46
  */
 
-public interface IFindPresenter {
+public interface IFindPresenter extends IBasePresenter {
     void getDiscoveryInfo();
 }
