@@ -10,22 +10,29 @@
 
     <include
         android:id="@+id/title_bar"
-        layout="@layout/activity_title"/>
+        layout="@layout/activity_title"
+        />
+
+    <View
+        android:id="@+id/title_bar_divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@android:color/black"/>
 
     <FrameLayout
-        android:id="@+id/content"
+        android:id="@+id/main_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"></FrameLayout>
+        android:layout_weight="1"/>
 
     <RadioGroup
         android:id="@+id/menu_group"
-        android:gravity="bottom"
-        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="#FFFFFFFF">
+        android:layout_gravity="center"
+        android:background="#FFFFFFFF"
+        android:gravity="bottom"
+        android:orientation="horizontal">
 
         <RadioButton
             android:id="@+id/menu_select"

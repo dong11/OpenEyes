@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@android:color/white">
+
+    <LinearLayout
+        android:id="@+id/ll_search_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_search_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="8dp"
+            android:text="@string/search_tips"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_hot_words"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:textSize="16sp"/>
+
+        <com.rex.hwong.openeyes.ui.widget.tagview.TagListView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/search_tagview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingTop="16.0dip"
+            app:horizontalSpacing="12dp"
+            app:orientation="horizontal"
+            app:verticalSpacing="12dp"/>
+
+        <View
+            android:id="@+id/tv_search_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_search_after"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#fff"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:paddingLeft="20dp"
+            >
+
+            <EditText
+                android:id="@+id/search_et_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/search_edittext_shape"
+                android:gravity="center"
+                android:hint="@string/search_text"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp"
+                android:textSize="12sp"/>
+
+            <ImageView
+                android:id="@+id/search_iv_delete"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right|center_vertical"
+                android:src="@drawable/ic_action_cancel_grey"
+                android:visibility="gone"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_search_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp"
+            android:text="@string/search_cancel"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+</RelativeLayout>

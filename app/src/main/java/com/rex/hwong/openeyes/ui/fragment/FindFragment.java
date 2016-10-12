@@ -109,7 +109,7 @@ public class FindFragment extends Fragment implements IFindFragment {
     public void getDiscoveryInfo(List<DiscoveryItem> bannerDatas, List<DiscoveryItem> contentDatas) {
         if (bannerDatas == null || contentDatas == null) return;
         mContentDatas.addAll(contentDatas);
-        for(int i = 0; i < bannerDatas.size(); i++){
+        for(int i = 0; i < bannerDatas.size(); i++) {
             mFragments.add(BannerItemFragment.newInstance(bannerDatas.get(i).getImage()));
         }
         mBannerAdapter.notifyDataSetChanged();

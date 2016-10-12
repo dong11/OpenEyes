@@ -6,4 +6,7 @@
 
     <color name="menuColorNormal">#55ffffff</color>
     <color name="menuColorSelect">#ff000000</color>
+
+    <color name="darkgray">#5ccc</color>
+    <color name="color_white">#ffffff</color>
 </resources>

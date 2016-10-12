@@ -21,4 +21,9 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <style name="SearchPopWindowStyle" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/popwindow_enter</item>
+        <item name="@android:windowExitAnimation">@anim/popwindow_exit</item>
+    </style>
+
 </resources>
