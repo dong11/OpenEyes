@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.rex.hwong.openeyes.ui.widget.tagview;
 
 import java.util.ArrayList;

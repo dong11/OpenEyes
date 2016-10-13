@@ -1,6 +1,7 @@
 package com.rex.hwong.openeyes.ui.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,7 @@ import com.rex.hwong.openeyes.R;
 import com.rex.hwong.openeyes.bean.discovery.DiscoveryItem;
 import com.rex.hwong.openeyes.presenter.IFindPresenter;
 import com.rex.hwong.openeyes.presenter.Impl.FindPresenterImpl;
+import com.rex.hwong.openeyes.ui.activity.FindDetailActivity;
 import com.rex.hwong.openeyes.ui.adapter.BannerAdapter;
 import com.rex.hwong.openeyes.ui.adapter.FindRVAdapter;
 import com.rex.hwong.openeyes.ui.iView.IFindFragment;
@@ -87,7 +89,8 @@ public class FindFragment extends Fragment implements IFindFragment {
         mFindRVAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getContext(), "点击了item!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), FindDetailActivity.class);
+                startActivity(intent);
             }
         });
 

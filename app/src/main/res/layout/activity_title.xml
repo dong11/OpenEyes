@@ -10,6 +10,18 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
+        <ImageView
+            android:id="@+id/iv_title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:src="@drawable/ic_action_back"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="3dp"
+            android:visibility="gone"
+            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
