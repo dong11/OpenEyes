@@ -4,6 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rpv_banner"
     android:layout_width="match_parent"
-    android:layout_height="200dp"
+    android:layout_height="240dp"
     app:rollviewpager_play_delay="3000">
 </com.jude.rollviewpager.RollPagerView>

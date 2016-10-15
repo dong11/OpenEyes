@@ -42,6 +42,8 @@ public class MainActivity extends BaseActivity {
     ImageView ivSearch;
     @BindView(R.id.rl_search_before)
     RelativeLayout mSearchBefore;
+    @BindView(R.id.title_bar_divider)
+    View ivTitleBarDevider;
 
     private ArrayList<Fragment> mFragments;
     private Fragment currentFragment;
@@ -73,22 +75,26 @@ public class MainActivity extends BaseActivity {
                 int page = 0;
                 switch (checkedId){
                     case R.id.menu_select:
-                        mTitleView.setVisibility(View.VISIBLE);
+                        mTitleView.setVisibility(View.GONE);
+                        ivTitleBarDevider.setVisibility(View.GONE);
                         break;
                     case R.id.menu_find:
                         page = 1;
                         titleRes = R.string.menu_find;
                         mTitleView.setVisibility(View.VISIBLE);
+                        ivTitleBarDevider.setVisibility(View.VISIBLE);
                         break;
                     case R.id.menu_author:
                         page = 2;
                         titleRes = R.string.menu_author;
                         mTitleView.setVisibility(View.VISIBLE);
+                        ivTitleBarDevider.setVisibility(View.VISIBLE);
                         break;
                     case R.id.menu_self:
                         page = 3;
                         titleRes = R.string.menu_self;
                         mTitleView.setVisibility(View.VISIBLE);
+                        ivTitleBarDevider.setVisibility(View.VISIBLE);
                         break;
                 }
                 switchFragment(mFragments.get(page), titleRes);

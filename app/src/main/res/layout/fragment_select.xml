@@ -1,10 +1,45 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical"
-              tools:context="com.rex.hwong.openeyes.ui.fragment.SelectFragment">
 
 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+                  tools:context="com.rex.hwong.openeyes.ui.fragment.SelectFragment">>
 
-</LinearLayout>
+        <RelativeLayout
+            android:id="@+id/rl_fragment_select_header"
+            android:layout_width="match_parent"
+            android:layout_height="240dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/home_page_header_cover"
+                android:scaleType="center"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/home_page_header_icon"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="10dp"
+                android:src="@drawable/ic_action_search_white"/>
+        </RelativeLayout>
+
+        <com.rex.hwong.openeyes.ui.widget.ObservableScrollView
+            android:id="@+id/sv_fragment_select"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+        </com.rex.hwong.openeyes.ui.widget.ObservableScrollView>
+    </LinearLayout>

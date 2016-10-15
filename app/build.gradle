@@ -20,8 +20,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'
     compile 'com.jakewharton:butterknife:8.1.0'
@@ -33,17 +32,15 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.android.support:support-v4:23.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.1.0'
-
     //  dependency ijkplayer start
     compile 'tv.danmaku.ijk.media:ijkplayer-java:0.6.2'
     compile 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.6.2'
-
     compile 'tv.danmaku.ijk.media:ijkplayer-armv5:0.6.2'
     compile 'tv.danmaku.ijk.media:ijkplayer-x86:0.6.2'
-
     compile 'tv.danmaku.ijk.media:ijkplayer-exo:0.6.2'
     //  dependency ijkplayer end
-
     //轮播图
     compile 'com.jude:rollviewpager:1.4.5'
+    //    compile 'com.github.hackware1993:MagicIndicator:1.4.0'
+    compile project(':magicindicator')
 }
