@@ -7,21 +7,18 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 
 import com.rex.hwong.openeyes.R;
-import com.rex.hwong.openeyes.ui.widget.ObservableScrollView;
+import com.rex.hwong.openeyes.ui.widget.ObservableListView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,12 +32,12 @@ import butterknife.Unbinder;
  */
 public class SelectFragment extends Fragment {
 
-    @BindView(R.id.sv_fragment_select)
-    ObservableScrollView mScrollView;
     @BindView(R.id.rl_fragment_select_header)
     RelativeLayout mHeaderView;
     @BindView(R.id.listview)
     ListView mListView;
+    @BindView(R.id.sv)
+    ObservableListView mSv;
 
     int mY;
 
@@ -62,9 +59,9 @@ public class SelectFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mScrollView.setScrollViewListener(new ObservableScrollView.ScrollViewListener() {
+        mSv.setScrollViewListener(new ObservableListView.ScrollViewListener() {
             @Override
-            public void onScrollChanged(ObservableScrollView scrollView, int x, int y, int oldx, int oldy) {
+            public void onScrollChanged(ObservableListView scrollView, int x, int y, int oldx, int oldy) {
                 Log.i("123", ":y:" + y);
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                 Log.i("123", "::" + (mListView.getHeight() - (y - oldy)));

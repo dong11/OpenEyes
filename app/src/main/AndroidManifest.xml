@@ -25,6 +25,8 @@
         </activity>
         <activity android:name=".ui.activity.FindDetailActivity">
         </activity>
+        <activity android:name=".ui.activity.FindDetailItemActivity" android:theme="@style/Transparent">
+        </activity>
     </application>
 
 </manifest>

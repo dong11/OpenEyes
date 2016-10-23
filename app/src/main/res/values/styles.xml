@@ -26,4 +26,9 @@
         <item name="@android:windowExitAnimation">@anim/popwindow_exit</item>
     </style>
 
+    <style name="Transparent" parent="AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
 </resources>

@@ -1,45 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.rex.hwong.openeyes.ui.fragment.SelectFragment">>
 
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
+        android:id="@+id/rl_fragment_select_header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-                  tools:context="com.rex.hwong.openeyes.ui.fragment.SelectFragment">>
+        android:layout_height="240dp">
 
-        <RelativeLayout
-            android:id="@+id/rl_fragment_select_header"
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="240dp">
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/home_page_header_cover"/>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/home_page_header_cover"
-                android:scaleType="center"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/home_page_header_icon"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:src="@drawable/home_page_header_icon"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_action_search_white"/>
+    </RelativeLayout>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_margin="10dp"
-                android:src="@drawable/ic_action_search_white"/>
-        </RelativeLayout>
+    <com.rex.hwong.openeyes.ui.widget.ObservableListView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
 
-        <com.rex.hwong.openeyes.ui.widget.ObservableScrollView
-            android:id="@+id/sv_fragment_select"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-        <ListView
-            android:id="@+id/listview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></ListView>
-        </com.rex.hwong.openeyes.ui.widget.ObservableScrollView>
-    </LinearLayout>
+            <ListView
+                android:id="@+id/listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ListView>
+        </LinearLayout>
+    </com.rex.hwong.openeyes.ui.widget.ObservableListView>
+
+</LinearLayout>

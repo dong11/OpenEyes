@@ -2,6 +2,7 @@ package com.rex.hwong.openeyes.ui.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.widget.ListView;
 import android.widget.ScrollView;
 
 /**
@@ -10,19 +11,19 @@ import android.widget.ScrollView;
  * @time 下午11:14
  */
 
-public class ObservableScrollView extends ScrollView {
+public class ObservableListView extends ScrollView {
 
     private ScrollViewListener scrollViewListener = null;
 
-    public ObservableScrollView(Context context) {
+    public ObservableListView(Context context) {
         super(context);
     }
 
-    public ObservableScrollView(Context context, AttributeSet attrs) {
+    public ObservableListView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public ObservableScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ObservableListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -39,7 +40,7 @@ public class ObservableScrollView extends ScrollView {
     }
 
     public interface ScrollViewListener {
-        void onScrollChanged(ObservableScrollView scrollView, int x, int y, int oldx, int oldy);
+        void onScrollChanged(ObservableListView scrollView, int x, int y, int oldx, int oldy);
 
     }
 }
