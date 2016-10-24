@@ -10,6 +10,7 @@ import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,8 +80,8 @@ public class FindDetailFragment extends Fragment {
         mAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                ImageView imageView = (ImageView) view.findViewById(R.id.iv_fragment_find_detail_item);
-                launch(view, "");
+                ImageView imageView = (ImageView) view.findViewById(R.id.iv_fragment_find_detail_item);
+                launch(imageView, "");
             }
         });
     }
@@ -98,6 +99,7 @@ public class FindDetailFragment extends Fragment {
         Bundle b = new Bundle();
         int[] screenLocation = new int[2];
         view.getLocationOnScreen(screenLocation);
+        Log.i("123", ":cy:" + screenLocation[1]);
         b.putInt("left", screenLocation[0]);
         b.putInt("top", screenLocation[1]);
         b.putInt("width", view.getWidth());

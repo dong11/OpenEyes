@@ -1,6 +1,8 @@
 package com.rex.hwong.openeyes.ui.activity;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,6 +27,11 @@ public class FindDetailItemActivity extends AppCompatActivity {
     @BindView(R.id.imageView)
     ImageView imageView;
 
+    private Bundle mEndValues;
+    private Bundle mStartValues;
+    private String mImageUrl;
+    private float mDeltaY;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +39,7 @@ public class FindDetailItemActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         extractViewInfoFromBundle(getIntent());
+
         Glide.with(this).load("http://img.kaiyanapp.com/85d8f9741d093d40451ccfde16229698.jpeg?imageMogr2/quality/60").listener(new RequestListener<String, GlideDrawable>() {
             @Override
             public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
@@ -67,6 +75,7 @@ public class FindDetailItemActivity extends AppCompatActivity {
         // We can now make it visible
         imageView.setVisibility(View.VISIBLE);
         // finally, run the animation
+
         imageView.animate()
                 .setDuration(500)
                 .setInterpolator(new DecelerateInterpolator())
@@ -78,22 +87,33 @@ public class FindDetailItemActivity extends AppCompatActivity {
     }
     private void prepareScene() {
         // capture the end values in the destionation view
-//        mEndValues = captureValues(imageView);
+        mEndValues = captureValues(imageView);
 
         // calculate the scale and positoin deltas
 //        float scaleX = scaleDelta(mStartValues, mEndValues);
-//        float scaleY = scaleDelta(mStartValues, mEndValues);
+        float scaleY = scaleDelta(mStartValues, mEndValues);
 //        int deltaX = translationDelta(mStartValues, mEndValues);
 //        int deltaY = translationDelta(mStartValues, mEndValues);
+        translationDelta(mStartValues, mEndValues);
 
         // scale and reposition the image
-        imageView.setScaleX(0.5f);
-        imageView.setScaleY(0.5f);
+        imageView.setScaleX(1.2f);
+        imageView.setScaleY(1.2f);
         imageView.setTranslationX(0);
-        imageView.setTranslationY(500f);
+        imageView.setTranslationY(mDeltaY);
+    }
+
+    private void translationDelta(Bundle values, Bundle values1) {
+        mDeltaY = values.getInt("top") -  values1.getInt("top");
+    }
+
+    private float scaleDelta(Bundle values, Bundle values1) {
+        return values.getInt("height") /  values1.getInt("height");
     }
 
     private void extractViewInfoFromBundle(Intent intent) {
+        mStartValues = intent.getBundleExtra("info");
+        mImageUrl = intent.getStringExtra("imageUrl");
     }
 
     private Bundle captureValues(@NonNull View view) {
@@ -107,6 +127,7 @@ public class FindDetailItemActivity extends AppCompatActivity {
         return b;
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
     private void runExitAnimation() {
         imageView.animate()
                 .setDuration(500)
@@ -114,7 +135,7 @@ public class FindDetailItemActivity extends AppCompatActivity {
                 .scaleX(1)
                 .scaleY(1)
                 .translationX(0)
-                .translationY(500)
+                .translationY(mDeltaY)
                 .withEndAction(new Runnable() {
                     @Override
                     public void run() {
