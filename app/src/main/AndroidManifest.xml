@@ -25,7 +25,11 @@
         </activity>
         <activity android:name=".ui.activity.FindDetailActivity">
         </activity>
-        <activity android:name=".ui.activity.FindDetailItemActivity" android:theme="@style/Transparent">
+        <activity
+            android:name=".ui.activity.FindDetailItemActivity"
+            android:theme="@style/Transparent">
+        </activity>
+        <activity android:name=".ui.activity.PlayerActivity">
         </activity>
     </application>
 

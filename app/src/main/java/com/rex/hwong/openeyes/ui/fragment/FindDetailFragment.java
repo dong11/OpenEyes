@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import com.rex.hwong.openeyes.R;
 import com.rex.hwong.openeyes.bean.discovery.detail.DetailData;
 import com.rex.hwong.openeyes.ui.activity.FindDetailItemActivity;
+import com.rex.hwong.openeyes.ui.activity.PlayerActivity;
 import com.rex.hwong.openeyes.ui.adapter.FindDetailAdapter;
 import com.rex.hwong.openeyes.ui.adapter.FindDetailItemAdapter;
 
@@ -80,8 +81,10 @@ public class FindDetailFragment extends Fragment {
         mAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                ImageView imageView = (ImageView) view.findViewById(R.id.iv_fragment_find_detail_item);
-                launch(imageView, "");
+//                ImageView imageView = (ImageView) view.findViewById(R.id.iv_fragment_find_detail_item);
+//                launch(imageView, "");
+                Intent intent = new Intent(getActivity(), PlayerActivity.class);
+                startActivity(intent);
             }
         });
     }
